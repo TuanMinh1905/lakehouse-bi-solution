@@ -1,12 +1,12 @@
 # E-commerce Analytics - Lakehouse BI Solution
 
 ## Giới thiệu
-Project xây dựng data lakehouse từ dữ liệu thô để tạo các dashboard hỗ trợ quyết định kinh doanh.
+Project của chị Vy Vy
 
 ## Kiến trúc
-- **Bronze Layer**: Dữ liệu thô từ CSV files
-- **Silver Layer**: Dữ liệu đã được làm sạch và chuẩn hóa
-- **Gold Layer**: Dimension/Fact tables, aggregates, và segments cho BI
+- **Bronze Layer**: Dữ liệu thô từ CSV files ( Data Raw )
+- **Silver Layer**: Dữ liệu đã được làm sạch và chuẩn hóa ( Bao gồm xóa null, xóa trùng lặp, xóa cột thừa, nói chung là clean :v )
+- **Gold Layer**: Dimension/Fact tables, aggregates, và segments cho BI ( Chia dim fact phục vụ cho Dashboard)
 
 ## Cài đặt
 
@@ -27,17 +27,17 @@ pip install -r requirements.txt
 
 ## Sử dụng
 
-### 1. Upload dữ liệu lên Bronze
+### 1. Upload dữ liệu lên Bronze trên Minio
 ```bash
 python jobs/01_upload_bronze.py
 ```
 
-### 2. Chuyển đổi Bronze → Silver
+### 2. Chuyển đổi Bronze → Silver, sau đó up load lên layer Silver trên Minio :v
 ```bash
 python jobs/02_bronze_to_silver.py
 ```
 
-### 3. Tạo Gold layer
+### 3. Tạo Gold layer, xử lí xong và up lên Minio
 ```bash
 python jobs/03_silver_to_gold.py
 ```

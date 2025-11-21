@@ -19,9 +19,9 @@ MINIO_REGION = os.getenv("MINIO_REGION", "us-east-1")
 LOCAL_BRONZE_DIR = r"C:\Users\GP\Desktop\VyVy\Data_Bronze"   # TODO: sửa cho đúng
 
 FILES = {
-    "checkouts": "checkouts.xlsx",
-    "orders": "orders.xlsx",
-    "customers": "customers.xlsx",
+    "checkouts": "checkouts.csv",
+    "orders": "orders.csv",
+    "customers": "customers.csv",
 }
 
 def upload_csv_to_minio(df: pd.DataFrame, key: str, s3_client):
@@ -57,7 +57,11 @@ def main():
     for name, filename in FILES.items():
         path = os.path.join(LOCAL_BRONZE_DIR, filename)
         print(f"Reading {path} ...")
-        df = pd.read_excel(path)
+        try:
+            df = pd.read_csv(path, on_bad_lines='skip', engine='python')
+        except Exception as e:
+            print(f"  Warning: {e}. Trying with error_bad_lines=False...")
+            df = pd.read_csv(path, on_bad_lines='skip')
 
         key = f"bronze/{name}/{today_str}_{name}.csv"
         upload_csv_to_minio(df, key, s3_client)

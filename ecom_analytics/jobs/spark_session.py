@@ -13,9 +13,17 @@ def create_spark(app_name: str = "EcomAnalytics"):
     """
     Tạo SparkSession đã cấu hình đọc/ghi MinIO qua s3a://
     """
+    # Đường dẫn tới thư mục chứa JAR files
+    jar_dir = r"C:\Users\GP\Desktop\VyVy\spark-jars"
+    jars = [
+        os.path.join(jar_dir, "hadoop-aws-3.3.4.jar"),
+        os.path.join(jar_dir, "aws-java-sdk-bundle-1.12.262.jar")
+    ]
+    
     spark = (
         SparkSession.builder
         .appName(app_name)
+        .config("spark.jars", ",".join(jars))
         .config("spark.hadoop.fs.s3a.endpoint", MINIO_ENDPOINT)
         .config("spark.hadoop.fs.s3a.access.key", MINIO_ACCESS_KEY)
         .config("spark.hadoop.fs.s3a.secret.key", MINIO_SECRET_KEY)
