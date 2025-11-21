@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+
+# Spark/Hadoop
+spark-jars/
+*.jar
+
+# MinIO
+minio.exe
+minio-data/
+
+# Data files
+# Data_Bronze/
+# *.csv
+# *.parquet
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Config
+.env
