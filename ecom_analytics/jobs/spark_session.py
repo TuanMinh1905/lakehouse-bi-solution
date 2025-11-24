@@ -1,35 +1,40 @@
 # jobs/spark_session.py
 import os
+import sys
 from pyspark.sql import SparkSession
 from dotenv import load_dotenv
 
 load_dotenv(os.path.join(os.path.dirname(__file__), "..", "config", ".env"))
 
-MINIO_ENDPOINT = os.getenv("MINIO_ENDPOINT")
-MINIO_ACCESS_KEY = os.getenv("MINIO_ACCESS_KEY")
-MINIO_SECRET_KEY = os.getenv("MINIO_SECRET_KEY")
-
 def create_spark(app_name: str = "EcomAnalytics"):
     """
-    Tạo SparkSession đã cấu hình đọc/ghi MinIO qua s3a://
+    Create SparkSession for local Parquet operations.
+    No S3A configs needed - using local storage.
     """
-    # Đường dẫn tới thư mục chứa JAR files
-    jar_dir = r"C:\Users\GP\Desktop\VyVy\spark-jars"
-    jars = [
-        os.path.join(jar_dir, "hadoop-aws-3.3.4.jar"),
-        os.path.join(jar_dir, "aws-java-sdk-bundle-1.12.262.jar")
-    ]
+    # For Windows, disable Hadoop checks that require winutils
+    if sys.platform == "win32":
+        # Create dummy hadoop home
+        hadoop_home = r"C:\Users\GP\Desktop\VyVy\hadoop-tmp"
+        bin_dir = os.path.join(hadoop_home, "bin")
+        os.makedirs(bin_dir, exist_ok=True)
+        os.environ["HADOOP_HOME"] = hadoop_home
+        
+        # Set HADOOP_OPTS to disable shell script invocations
+        os.environ["HADOOP_OPTS"] = "-Dhadoop.home.dir=" + hadoop_home
     
+    # Build SparkSession
     spark = (
         SparkSession.builder
         .appName(app_name)
-        .config("spark.jars", ",".join(jars))
-        .config("spark.hadoop.fs.s3a.endpoint", MINIO_ENDPOINT)
-        .config("spark.hadoop.fs.s3a.access.key", MINIO_ACCESS_KEY)
-        .config("spark.hadoop.fs.s3a.secret.key", MINIO_SECRET_KEY)
-        .config("spark.hadoop.fs.s3a.path.style.access", "true")
-        .config("spark.hadoop.fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
-        .config("spark.hadoop.fs.s3a.connection.ssl.enabled", "false")  # nếu MinIO không dùng https
+        .config("spark.driver.host", "127.0.0.1")
+        .config("spark.sql.parquet.int96AsTimestamp", "false")
+        .config("spark.sql.parquet.outputTimestampType", "TIMESTAMP_MICROS")
+        .config("spark.sql.parquet.int96RebaseModeInRead", "CORRECTED")
+        .config("spark.sql.parquet.int64RebaseModeInRead", "CORRECTED")
+        .config("spark.sql.shuffle.partitions", "4")
         .getOrCreate()
     )
+    
+    spark.sparkContext.setLogLevel("ERROR")
+    
     return spark
