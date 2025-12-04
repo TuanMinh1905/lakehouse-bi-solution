@@ -1,0 +1,72 @@
+[2025/11/24 13:37:45.566, java.exe (PID: 9964, TID: 20188), JavaEnvironment.cpp:502 (JavaEnvironment::detect)]
+	TRACE: Entering JavaEnvironment::detect
+[2025/11/24 13:37:45.574, java.exe (PID: 9964, TID: 20188), JavaEnvironment.cpp:519 (JavaEnvironment::detect)]
+	TRACE: Installed Java detected: version=; arch=64; productCode={3674DC7F-11D5-5F58-B7FA-E0B86E2FD912}; type=1
+[2025/11/24 13:37:45.574, java.exe (PID: 9964, TID: 20188), JavaEnvironment.cpp:135 (`anonymous-namespace'::detectHomeDir)]
+	TRACE: Find home dir of {3674DC7F-11D5-5F58-B7FA-E0B86E2FD912} Java installation
+[2025/11/24 13:37:45.574, java.exe (PID: 9964, TID: 20188), JavaEnvironment.cpp:302 (`anonymous-namespace'::detectFullVersion)]
+	TRACE: Detect full version of {3674DC7F-11D5-5F58-B7FA-E0B86E2FD912} Java installation
+[2025/11/24 13:37:45.575, java.exe (PID: 9964, TID: 20188), JavaEnvironment.cpp:213 (`anonymous-namespace'::detectFullVersionFromMsi)]
+	TRACE: detectFullVersionFromMsi({3674DC7F-11D5-5F58-B7FA-E0B86E2FD912})
+[2025/11/24 13:37:45.578, java.exe (PID: 9964, TID: 20188), JavaEnvironment.cpp:481 (`anonymous-namespace'::getInstalledJava)]
+	TRACE: InstalledJava(21.0.9+7|21.0.9+7|JDK|64bit|C:\Program Files\Java\jdk-21|{3674DC7F-11D5-5F58-B7FA-E0B86E2FD912}|-10|)
+[2025/11/24 13:37:45.579, java.exe (PID: 9964, TID: 20188), JavaEnvironment.cpp:0 (JavaEnvironment::detect)]
+	TRACE: Exiting JavaEnvironment::detect (entered at JavaEnvironment.cpp:502)
+[2025/11/24 13:37:45.585, java.exe (PID: 9964, TID: 20188), Executor.cpp:706 (Executor2::startProcess)]
+	TRACE: CreateProcess(C:\Program Files\Java\jdk-21\bin\java.exe, "C:\Program Files\Java\jdk-21\bin\java.exe" -Xmx128m -cp C:\Users\GP\Desktop\VyVy\.venv\Lib\site-packages\pyspark\bin\..\jars\* org.apache.spark.launcher.Main org.apache.spark.deploy.SparkSubmit --conf spark.app.name=BronzeToSilver --conf spark.driver.host=127.0.0.1 --conf spark.sql.parquet.int96AsTimestamp=false --conf spark.sql.parquet.outputTimestampType=TIMESTAMP_MICROS --conf spark.hadoop.fs.s3a.endpoint=http://localhost:9000 --conf spark.hadoop.fs.s3a.access.key=minioadmin --conf spark.hadoop.fs.s3a.secret.key=minioadmin --conf spark.hadoop.fs.s3a.path.style.access=true --conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem --conf spark.hadoop.fs.s3a.connection.ssl.enabled=false --conf spark.hadoop.fs.s3a.multipart.size=104857600 --conf spark.hadoop.fs.s3a.multipart.threshold=104857600 --conf spark.hadoop.fs.s3a.socket.send.buffer=65536 --conf spark.hadoop.fs.s3a.socket.recv.buffer=65536 --conf spark.sql.shuffle.partitions=4 --conf spark.hadoop.fs.s3a.fast.upload.buffer=disk --conf spark.hadoop.fs.s3a.buffer.dir=C:\Users\GP\Desktop\VyVy\hadoop-tmp\tmp pyspark-shell) succeeded; PID=12832
+[2025/11/24 13:37:45.904, java.exe (PID: 9964, TID: 20188), Executor.cpp:667 (Executor2::execAndWait)]
+	TRACE: Process with PID=12832 terminated. Exit code=0
+[2025/11/24 13:38:52.919, java.exe (PID: 10924, TID: 2096), JavaEnvironment.cpp:502 (JavaEnvironment::detect)]
+	TRACE: Entering JavaEnvironment::detect
+[2025/11/24 13:38:52.927, java.exe (PID: 10924, TID: 2096), JavaEnvironment.cpp:519 (JavaEnvironment::detect)]
+	TRACE: Installed Java detected: version=; arch=64; productCode={3674DC7F-11D5-5F58-B7FA-E0B86E2FD912}; type=1
+[2025/11/24 13:38:52.927, java.exe (PID: 10924, TID: 2096), JavaEnvironment.cpp:135 (`anonymous-namespace'::detectHomeDir)]
+	TRACE: Find home dir of {3674DC7F-11D5-5F58-B7FA-E0B86E2FD912} Java installation
+[2025/11/24 13:38:52.927, java.exe (PID: 10924, TID: 2096), JavaEnvironment.cpp:302 (`anonymous-namespace'::detectFullVersion)]
+	TRACE: Detect full version of {3674DC7F-11D5-5F58-B7FA-E0B86E2FD912} Java installation
+[2025/11/24 13:38:52.927, java.exe (PID: 10924, TID: 2096), JavaEnvironment.cpp:213 (`anonymous-namespace'::detectFullVersionFromMsi)]
+	TRACE: detectFullVersionFromMsi({3674DC7F-11D5-5F58-B7FA-E0B86E2FD912})
+[2025/11/24 13:38:52.930, java.exe (PID: 10924, TID: 2096), JavaEnvironment.cpp:481 (`anonymous-namespace'::getInstalledJava)]
+	TRACE: InstalledJava(21.0.9+7|21.0.9+7|JDK|64bit|C:\Program Files\Java\jdk-21|{3674DC7F-11D5-5F58-B7FA-E0B86E2FD912}|-10|)
+[2025/11/24 13:38:52.932, java.exe (PID: 10924, TID: 2096), JavaEnvironment.cpp:0 (JavaEnvironment::detect)]
+	TRACE: Exiting JavaEnvironment::detect (entered at JavaEnvironment.cpp:502)
+[2025/11/24 13:38:52.938, java.exe (PID: 10924, TID: 2096), Executor.cpp:706 (Executor2::startProcess)]
+	TRACE: CreateProcess(C:\Program Files\Java\jdk-21\bin\java.exe, "C:\Program Files\Java\jdk-21\bin\java.exe" -Xmx128m -cp C:\Users\GP\Desktop\VyVy\.venv\Lib\site-packages\pyspark\bin\..\jars\* org.apache.spark.launcher.Main org.apache.spark.deploy.SparkSubmit --conf spark.app.name=BronzeToSilver --conf spark.driver.host=127.0.0.1 --conf spark.sql.parquet.int96AsTimestamp=false --conf spark.sql.parquet.outputTimestampType=TIMESTAMP_MICROS --conf spark.hadoop.fs.s3a.endpoint=http://localhost:9000 --conf spark.hadoop.fs.s3a.access.key=minioadmin --conf spark.hadoop.fs.s3a.secret.key=minioadmin --conf spark.hadoop.fs.s3a.path.style.access=true --conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem --conf spark.hadoop.fs.s3a.connection.ssl.enabled=false --conf spark.hadoop.fs.s3a.multipart.size=104857600 --conf spark.hadoop.fs.s3a.multipart.threshold=104857600 --conf spark.hadoop.fs.s3a.socket.send.buffer=65536 --conf spark.hadoop.fs.s3a.socket.recv.buffer=65536 --conf spark.sql.shuffle.partitions=4 --conf spark.hadoop.fs.s3a.fast.upload.buffer=disk --conf spark.hadoop.fs.s3a.buffer.dir=C:\Users\GP\Desktop\VyVy\hadoop-tmp\tmp pyspark-shell) succeeded; PID=20536
+[2025/11/24 13:38:53.236, java.exe (PID: 10924, TID: 2096), Executor.cpp:667 (Executor2::execAndWait)]
+	TRACE: Process with PID=20536 terminated. Exit code=0
+[2025/11/24 13:46:15.142, java.exe (PID: 15004, TID: 15564), JavaEnvironment.cpp:502 (JavaEnvironment::detect)]
+	TRACE: Entering JavaEnvironment::detect
+[2025/11/24 13:46:15.150, java.exe (PID: 15004, TID: 15564), JavaEnvironment.cpp:519 (JavaEnvironment::detect)]
+	TRACE: Installed Java detected: version=; arch=64; productCode={3674DC7F-11D5-5F58-B7FA-E0B86E2FD912}; type=1
+[2025/11/24 13:46:15.150, java.exe (PID: 15004, TID: 15564), JavaEnvironment.cpp:135 (`anonymous-namespace'::detectHomeDir)]
+	TRACE: Find home dir of {3674DC7F-11D5-5F58-B7FA-E0B86E2FD912} Java installation
+[2025/11/24 13:46:15.150, java.exe (PID: 15004, TID: 15564), JavaEnvironment.cpp:302 (`anonymous-namespace'::detectFullVersion)]
+	TRACE: Detect full version of {3674DC7F-11D5-5F58-B7FA-E0B86E2FD912} Java installation
+[2025/11/24 13:46:15.150, java.exe (PID: 15004, TID: 15564), JavaEnvironment.cpp:213 (`anonymous-namespace'::detectFullVersionFromMsi)]
+	TRACE: detectFullVersionFromMsi({3674DC7F-11D5-5F58-B7FA-E0B86E2FD912})
+[2025/11/24 13:46:15.154, java.exe (PID: 15004, TID: 15564), JavaEnvironment.cpp:481 (`anonymous-namespace'::getInstalledJava)]
+	TRACE: InstalledJava(21.0.9+7|21.0.9+7|JDK|64bit|C:\Program Files\Java\jdk-21|{3674DC7F-11D5-5F58-B7FA-E0B86E2FD912}|-10|)
+[2025/11/24 13:46:15.156, java.exe (PID: 15004, TID: 15564), JavaEnvironment.cpp:0 (JavaEnvironment::detect)]
+	TRACE: Exiting JavaEnvironment::detect (entered at JavaEnvironment.cpp:502)
+[2025/11/24 13:46:15.162, java.exe (PID: 15004, TID: 15564), Executor.cpp:706 (Executor2::startProcess)]
+	TRACE: CreateProcess(C:\Program Files\Java\jdk-21\bin\java.exe, "C:\Program Files\Java\jdk-21\bin\java.exe" -Xmx128m -cp C:\Users\GP\Desktop\VyVy\.venv\Lib\site-packages\pyspark\bin\..\jars\* org.apache.spark.launcher.Main org.apache.spark.deploy.SparkSubmit --conf spark.app.name=BronzeToSilver --conf spark.driver.host=127.0.0.1 --conf spark.sql.parquet.int96AsTimestamp=false --conf spark.sql.parquet.outputTimestampType=TIMESTAMP_MICROS --conf spark.hadoop.fs.s3a.endpoint=http://localhost:9000 --conf spark.hadoop.fs.s3a.access.key=minioadmin --conf spark.hadoop.fs.s3a.secret.key=minioadmin --conf spark.hadoop.fs.s3a.path.style.access=true --conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem --conf spark.hadoop.fs.s3a.connection.ssl.enabled=false --conf spark.hadoop.fs.s3a.multipart.size=104857600 --conf spark.hadoop.fs.s3a.multipart.threshold=104857600 --conf spark.hadoop.fs.s3a.socket.send.buffer=65536 --conf spark.hadoop.fs.s3a.socket.recv.buffer=65536 --conf spark.sql.shuffle.partitions=4 --conf spark.hadoop.fs.s3a.fast.upload.buffer=disk --conf spark.hadoop.fs.s3a.buffer.dir=C:\Users\GP\Desktop\VyVy\hadoop-tmp\tmp pyspark-shell) succeeded; PID=22912
+[2025/11/24 13:46:15.470, java.exe (PID: 15004, TID: 15564), Executor.cpp:667 (Executor2::execAndWait)]
+	TRACE: Process with PID=22912 terminated. Exit code=0
+[2025/11/24 13:47:35.606, java.exe (PID: 14244, TID: 21868), JavaEnvironment.cpp:502 (JavaEnvironment::detect)]
+	TRACE: Entering JavaEnvironment::detect
+[2025/11/24 13:47:35.613, java.exe (PID: 14244, TID: 21868), JavaEnvironment.cpp:519 (JavaEnvironment::detect)]
+	TRACE: Installed Java detected: version=; arch=64; productCode={3674DC7F-11D5-5F58-B7FA-E0B86E2FD912}; type=1
+[2025/11/24 13:47:35.615, java.exe (PID: 14244, TID: 21868), JavaEnvironment.cpp:135 (`anonymous-namespace'::detectHomeDir)]
+	TRACE: Find home dir of {3674DC7F-11D5-5F58-B7FA-E0B86E2FD912} Java installation
+[2025/11/24 13:47:35.615, java.exe (PID: 14244, TID: 21868), JavaEnvironment.cpp:302 (`anonymous-namespace'::detectFullVersion)]
+	TRACE: Detect full version of {3674DC7F-11D5-5F58-B7FA-E0B86E2FD912} Java installation
+[2025/11/24 13:47:35.615, java.exe (PID: 14244, TID: 21868), JavaEnvironment.cpp:213 (`anonymous-namespace'::detectFullVersionFromMsi)]
+	TRACE: detectFullVersionFromMsi({3674DC7F-11D5-5F58-B7FA-E0B86E2FD912})
+[2025/11/24 13:47:35.617, java.exe (PID: 14244, TID: 21868), JavaEnvironment.cpp:481 (`anonymous-namespace'::getInstalledJava)]
+	TRACE: InstalledJava(21.0.9+7|21.0.9+7|JDK|64bit|C:\Program Files\Java\jdk-21|{3674DC7F-11D5-5F58-B7FA-E0B86E2FD912}|-10|)
+[2025/11/24 13:47:35.619, java.exe (PID: 14244, TID: 21868), JavaEnvironment.cpp:0 (JavaEnvironment::detect)]
+	TRACE: Exiting JavaEnvironment::detect (entered at JavaEnvironment.cpp:502)
+[2025/11/24 13:47:35.625, java.exe (PID: 14244, TID: 21868), Executor.cpp:706 (Executor2::startProcess)]
+	TRACE: CreateProcess(C:\Program Files\Java\jdk-21\bin\java.exe, "C:\Program Files\Java\jdk-21\bin\java.exe" -Xmx128m -cp C:\Users\GP\Desktop\VyVy\.venv\Lib\site-packages\pyspark\bin\..\jars\* org.apache.spark.launcher.Main org.apache.spark.deploy.SparkSubmit --conf spark.app.name=BronzeToSilver --conf spark.driver.host=127.0.0.1 --conf spark.sql.parquet.int96AsTimestamp=false --conf spark.sql.parquet.outputTimestampType=TIMESTAMP_MICROS --conf hadoop.security.groups.cache.secs=-1 --conf dfs.permissions.enabled=false --conf spark.hadoop.fs.s3a.endpoint=http://localhost:9000 --conf spark.hadoop.fs.s3a.access.key=minioadmin --conf spark.hadoop.fs.s3a.secret.key=minioadmin --conf spark.hadoop.fs.s3a.path.style.access=true --conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem --conf spark.hadoop.fs.s3a.connection.ssl.enabled=false --conf spark.hadoop.fs.s3a.multipart.size=104857600 --conf spark.hadoop.fs.s3a.multipart.threshold=104857600 --conf spark.hadoop.fs.s3a.socket.send.buffer=65536 --conf spark.hadoop.fs.s3a.socket.recv.buffer=65536 --conf spark.sql.shuffle.partitions=4 --conf spark.hadoop.fs.s3a.fast.upload.buffer=disk --conf spark.hadoop.fs.s3a.buffer.dir=C:\Users\GP\Desktop\VyVy\hadoop-tmp\tmp pyspark-shell) succeeded; PID=13752
+[2025/11/24 13:47:35.921, java.exe (PID: 14244, TID: 21868), Executor.cpp:667 (Executor2::execAndWait)]
+	TRACE: Process with PID=13752 terminated. Exit code=0

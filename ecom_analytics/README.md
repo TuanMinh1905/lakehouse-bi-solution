@@ -55,3 +55,13 @@ ecom_analytics/
 ├── requirements.txt
 └── README.md
 ```
+
+### Thứ tự chạy file 
+```
+- Chạy Docker để mở Minio trước
+- Chạy file 01_upload_bronze để load Data thô lên lớp Bronze trên Minio
+- Chạy file 02_bronze_to_silver để clean data thô và load Data vừa làm sạch lên lớp Silver trên Minio
+- Chạy file 03_silver_to_gold để tạo ra dim fact từ  data đc làm sạch và load Dim Fact lên lớp Gold trên Minio
+- Chạy load_gold_to_sqlite để load data bảng Gold từ Minio xuống SQLITE để thực hiện truy vấn
+- Chạy create_ecom_dashboards để tạo ra "index, dashboard_3_customer_funnel, dashboard_2_product_performance, dashboard_1_business_overview" để hoàn thành Output
+```
