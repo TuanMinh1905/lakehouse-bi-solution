@@ -58,6 +58,7 @@ ecom_analytics/
 
 ### Thứ tự chạy file 
 ```
+- Khởi động MinIO  : docker-compose up -d
 - Chạy Docker để mở Minio trước
 - Chạy file 01_upload_bronze để load Data thô lên lớp Bronze trên Minio
 - Chạy file 02_bronze_to_silver để clean data thô và load Data vừa làm sạch lên lớp Silver trên Minio
